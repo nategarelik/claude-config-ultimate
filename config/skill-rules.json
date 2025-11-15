@@ -1,0 +1,67 @@
+{
+  "rules": [
+    {
+      "skill": "superpowers:systematic-debugging",
+      "priority": 10,
+      "keywords": ["bug", "error", "failing", "broken", "issue", "problem", "not working", "crash"],
+      "file_patterns": [],
+      "reason": "Detected debugging context - systematic approach recommended"
+    },
+    {
+      "skill": "superpowers:test-driven-development",
+      "priority": 9,
+      "keywords": ["implement", "add feature", "create function", "build", "new feature"],
+      "file_patterns": [".test.", ".spec.", "_test.", "test_"],
+      "reason": "Feature implementation detected - TDD workflow recommended"
+    },
+    {
+      "skill": "superpowers:code-reviewer",
+      "priority": 8,
+      "keywords": ["review", "check", "completed", "finished implementing"],
+      "file_patterns": [],
+      "reason": "Code review needed for completed work"
+    },
+    {
+      "skill": "spec-kit-orchestrator",
+      "priority": 9,
+      "keywords": ["plan", "specification", "requirements", "design", "architecture", "project structure"],
+      "file_patterns": [".specify/", "spec.md", "plan.md"],
+      "reason": "Spec-driven development workflow applicable"
+    },
+    {
+      "skill": "repomix-analyzer",
+      "priority": 8,
+      "keywords": ["codebase", "understand", "explore", "analyze", "structure", "overview", "how does"],
+      "file_patterns": [],
+      "reason": "Codebase analysis needed"
+    },
+    {
+      "skill": "gh-logger",
+      "priority": 5,
+      "keywords": ["log", "track", "record", "history"],
+      "file_patterns": [],
+      "reason": "Logging functionality requested"
+    },
+    {
+      "skill": "superpowers:brainstorming",
+      "priority": 9,
+      "keywords": ["design", "approach", "how should", "what's the best way", "options", "alternatives"],
+      "file_patterns": [],
+      "reason": "Design discussion detected - brainstorming recommended"
+    },
+    {
+      "skill": "superpowers:writing-plans",
+      "priority": 8,
+      "keywords": ["create plan", "implementation plan", "step by step", "task breakdown"],
+      "file_patterns": [],
+      "reason": "Implementation planning needed"
+    },
+    {
+      "skill": "agent-orchestrator",
+      "priority": 10,
+      "keywords": ["select agents", "install agents", "agent selection", "need agents", "which agents"],
+      "file_patterns": [".specify/constitution.md", ".specify/specs/"],
+      "reason": "Agent selection context detected - orchestrator can recommend specialized agents"
+    }
+  ]
+}

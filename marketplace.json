@@ -1,0 +1,149 @@
+{
+  "name": "claude-config-ultimate",
+  "version": "2.1.0",
+  "description": "Production-ready Claude Code configuration with intelligent automation, quality gates, comprehensive tooling, and advanced hooks",
+  "author": "nategarelik",
+  "homepage": "https://github.com/nategarelik/claude-config-ultimate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nategarelik/claude-config-ultimate.git"
+  },
+  "plugins": [
+    {
+      "name": "ultimate-config",
+      "displayName": "Ultimate Configuration Bundle",
+      "description": "Complete production configuration with hooks, skills, and intelligent automation - zero-friction permissions, auto-activating skills, comprehensive logging, and quality gates",
+      "version": "2.1.0",
+      "main": "install.sh",
+      "keywords": [
+        "configuration",
+        "automation",
+        "hooks",
+        "skills",
+        "quality-gates",
+        "logging",
+        "orchestration",
+        "superpowers",
+        "repomix",
+        "spec-kit"
+      ],
+      "categories": [
+        "configuration",
+        "automation",
+        "workflow"
+      ],
+      "capabilities": [
+        "Auto-approval permissions (zero prompts)",
+        "Intelligent skill auto-activation",
+        "Session logging with GitHub Copilot CLI",
+        "Agent orchestrator (85+ expert agents)",
+        "Spec-Kit workflow integration",
+        "Repomix codebase analysis",
+        "Superpowers quality gates",
+        "Sensitive data filtering",
+        "Cross-platform compatibility"
+      ],
+      "includes": {
+        "hooks": [
+          "session-logger.py",
+          "skill-activation.py",
+          "agent-orchestrator.py"
+        ],
+        "skills": [
+          "gh-logger",
+          "spec-kit-orchestrator",
+          "repomix-analyzer",
+          "agent-orchestrator"
+        ],
+        "config": [
+          "settings.json",
+          "skill-rules.json"
+        ],
+        "docs": [
+          "README.md",
+          "QUICK-START.md",
+          "COMPREHENSIVE-DOCUMENTATION.md",
+          "CONFIGURATION-SUMMARY.md",
+          "IMPROVEMENTS-APPLIED.md"
+        ]
+      },
+      "requirements": {
+        "claudeCode": ">=1.0.0",
+        "python": ">=3.8",
+        "optional": {
+          "gh": "GitHub CLI for logging integration",
+          "git": "Git for status line and version control"
+        }
+      },
+      "dependencies": {
+        "marketplaces": [
+          {
+            "name": "superpowers-marketplace",
+            "url": "https://github.com/simonwisdom/superpowers.git",
+            "required": true
+          },
+          {
+            "name": "repomix",
+            "url": "https://github.com/yamadashy/repomix-mcp.git",
+            "required": false
+          }
+        ],
+        "plugins": [
+          {
+            "name": "superpowers@superpowers-marketplace",
+            "required": true
+          },
+          {
+            "name": "superpowers-developing-for-claude-code@superpowers-marketplace",
+            "required": false
+          },
+          {
+            "name": "superpowers-lab@superpowers-marketplace",
+            "required": false
+          },
+          {
+            "name": "superpowers-chrome@superpowers-marketplace",
+            "required": false
+          },
+          {
+            "name": "repomix-mcp@repomix",
+            "required": false
+          },
+          {
+            "name": "repomix-explorer@repomix",
+            "required": false
+          },
+          {
+            "name": "repomix-commands@repomix",
+            "required": false
+          }
+        ]
+      },
+      "installation": {
+        "type": "script",
+        "script": "install.sh",
+        "manual": "See QUICK-START.md for manual installation steps"
+      },
+      "configuration": {
+        "merge": true,
+        "backup": true,
+        "interactive": true
+      },
+      "license": "MIT"
+    }
+  ],
+  "marketplace": {
+    "featured": true,
+    "tags": [
+      "configuration",
+      "automation",
+      "productivity",
+      "quality",
+      "security",
+      "workflow"
+    ],
+    "screenshots": [],
+    "documentation": "https://github.com/nategarelik/claude-config-ultimate/blob/main/README.md",
+    "support": "https://github.com/nategarelik/claude-config-ultimate/issues"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "This is a template - install.sh will merge this with your existing settings",
+  "cleanupPeriodDays": 90,
+  "includeCoAuthoredBy": true,
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "claude-sonnet-4-5-20250929",
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "memory",
+    "repomix-mcp"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"{{CLAUDE_HOME}}/hooks/session-logger.py\" start",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"{{CLAUDE_HOME}}/hooks/session-logger.py\" end",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"{{CLAUDE_HOME}}/hooks/skill-activation.py\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python \"{{CLAUDE_HOME}}/hooks/agent-orchestrator.py\"",
+            "timeout": 8
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"{{CLAUDE_HOME}}/hooks/session-logger.py\" log-tool",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "disableAllHooks": false,
+  "statusLine": {
+    "type": "command",
+    "command": "git rev-parse --abbrev-ref HEAD 2>nul || echo main"
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-marketplace": true,
+    "superpowers-developing-for-claude-code@superpowers-marketplace": true,
+    "superpowers-lab@superpowers-marketplace": true,
+    "superpowers-chrome@superpowers-marketplace": true,
+    "repomix-mcp@repomix": true,
+    "repomix-explorer@repomix": true,
+    "repomix-commands@repomix": true
+  },
+  "outputStyle": "Concise",
+  "sandbox": {
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "enabled": false
+  },
+  "alwaysThinkingEnabled": false
+}
